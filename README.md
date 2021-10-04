@@ -1,1 +1,2 @@
 # DFD-Challenge1-Unstoppable
+This challenge provided a great opportunity to test my abilities breaking down other contracts. My process was to review each of the contracts before making any attempts to exploit the contract. In doing so, the familiarity of the contracts was gave additional exposure to documentation that I had never come across before, such as Waffle when reviewing chai, among other benefits like learning from mistakes made with my first attempt. 
